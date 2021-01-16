@@ -1,7 +1,6 @@
 a {
   text-decoration: none;
 }
-
 .fa-search-location {
   font-size: 30px;
   position: relative;
@@ -11,6 +10,11 @@ a {
 #search {
   padding: 5px;
 }
+
+.code-link {
+  text-align: center;
+}
+
 .container {
   border: 1px solid black;
   border-radius: 10px;
@@ -18,6 +22,7 @@ a {
   max-width: 800px;
   min-width: 600px;
   margin: 20px auto;
+  margin-bottom: 10px;
 }
 
 .row {
