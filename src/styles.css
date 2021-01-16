@@ -1,0 +1,83 @@
+a {
+  text-decoration: none;
+}
+
+.fa-search-location {
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+}
+
+#search {
+  padding: 5px;
+}
+.container {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 800px;
+  min-width: 600px;
+  margin: 20px auto;
+}
+
+.row {
+  margin: 10px 0;
+}
+
+.today-stats {
+  position: relative;
+  left: 5px;
+}
+
+.today-temp {
+  font-size: calc(1.375rem + 1.5vw);
+  position: relative;
+  left: 15px;
+}
+
+.fa-snowflake {
+  color: #5eaaa8;
+  font-size: 90px;
+}
+
+.tmr-temp {
+  font-size: calc(1.3rem + 1vw);
+}
+
+.fa-cloud-sun {
+  color: #fdb827;
+}
+.tmr-cloud {
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+.ftr-date {
+  text-align: center;
+}
+
+.ftr-temp {
+  text-align: center;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.fa-cloud {
+  color: #79a3b1;
+}
+
+.fa-cloud-showers-heavy {
+  color: #456268;
+}
+
+.ftr-syb {
+  margin: 2px 0;
+  font-size: 30px;
+  position: relative;
+  left: 15px;
+}
+
+.ftr {
+  height: 142px;
+}
