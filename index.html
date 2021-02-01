@@ -47,34 +47,36 @@
                 </p>
             </div>
             <div class="row">
-                <div class="col-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-3">
-                                    <h5 class="card-title today-temp" id="today-temp">5º</h5>
-                                </div>
-                                <div class="col">
-                                    <a href="#" id="celsius">ºC</a> /
-                                    <a href="#" id="fahrenheit">ºF</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-8">
-                                    <p class="card-text today-stats">
-                                        Feels like: <span id="feels-like">-5º</span><br />
-                                        Humidity: <span id="humidity">65%</span> <br />
-                                        Wind: <span id="wind-speed">22 km/h </span>
-                                    </p>
-                                </div>
-                                <div class="col-4">
-                                    <i class="far fa-snowflake"></i>
-                                </div>
-                            </div>
+                <div class="col-3"></div>
+                <div class="col-3">
+                    <img 
+                        src="http://openweathermap.org/img/wn/10d@2x.png" 
+                        alt="Weather condition"
+                        id="current-icon"
+                    />
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-3">
+                            <h5 class="card-title today-temp" id="today-temp">5º</h5>
+                        </div>
+                        <div class="col-7">
+                            <a href="#" id="celsius">ºC</a> /
+                            <a href="#" id="fahrenheit">ºF</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <p class="card-text today-stats">
+                    <span id="weather-status">Weather Status</span> <br />
+                    Feels like: <span id="feels-like">-5º</span><br />
+                    Humidity: <span id="humidity">65%</span> <br />
+                    Wind: <span id="wind-speed">22 km/h </span>
+                </p>
+            </div>
+                
             <div class="row">
                 <div class="col-4">
                     <div class="card">
