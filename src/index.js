@@ -14,7 +14,7 @@ let day = days[now.getDay()];
 let time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
 let dayTime = document.querySelector("#current-time");
-dayTime.innerHTML= `${day} ${time}`;
+dayTime.innerHTML= `Last updated at ${time}`;
 
 let months = ["January", 
   "February", 
@@ -32,7 +32,7 @@ let months = ["January",
 let month = months[now.getMonth()];
 let date = now.getDate();
 let monthDate = document.querySelector("#today-date");
-monthDate.innerHTML = `${month} ${date}`;
+monthDate.innerHTML = `${day} ${month} ${date}`;
 
 
 //Search engine
