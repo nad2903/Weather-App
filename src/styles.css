@@ -21,15 +21,15 @@ p:first-letter {
   text-align: center;
 }
 
+#search {
+  padding: 5px;
+}
+
 .city {
   font-size: 40px;
   margin-top: 10px;
   margin-bottom: 0;
   text-align: center;
-}
-
-#search {
-  padding: 5px;
 }
 
 .code-link {
@@ -57,46 +57,4 @@ p:first-letter {
   font-size: 40px;
   padding-top: 20px;
   text-align: center;
-}
-
-.tmr-temp {
-  font-size: calc(1.3rem + 1vw);
-}
-
-.fa-cloud-sun {
-  color: #fdb827;
-}
-.tmr-cloud {
-  font-size: 40px;
-  position: relative;
-  top: 3px;
-}
-
-.ftr-date {
-  text-align: center;
-}
-
-.ftr-temp {
-  text-align: center;
-  font-size: 30px;
-  margin: 10px 0;
-}
-
-.fa-cloud {
-  color: #79a3b1;
-}
-
-.fa-cloud-showers-heavy {
-  color: #456268;
-}
-
-.ftr-syb {
-  margin: 2px 0;
-  font-size: 30px;
-  position: relative;
-  left: 15px;
-}
-
-.ftr {
-  height: 142px;
 }
