@@ -1,22 +1,20 @@
-//Current time
+function updateTime() {
+  let now = new Date();
 
-let now = new Date();
+  let days = ["Sunday", 
+    "Monday", 
+    "Tuesday", 
+    "Wednesday", 
+    "Thursday", 
+    "Friday", 
+    "Saturday"];
 
-let days = ["Sunday", 
-  "Monday", 
-  "Tuesday", 
-  "Wednesday", 
-  "Thursday", 
-  "Friday", 
-  "Saturday"];
+  let day = days[now.getDay()];
+  let time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-let day = days[now.getDay()];
-let time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-let dayTime = document.querySelector("#current-time");
-dayTime.innerHTML= `Last updated at ${time}`;
-
-let months = ["January", 
+  let dayTime = document.querySelector("#current-time");
+  dayTime.innerHTML= `Last updated at ${time}`;
+  let months = ["January", 
   "February", 
   "March", 
   "April", 
@@ -29,11 +27,13 @@ let months = ["January",
   "November", 
   "December"];
 
-let month = months[now.getMonth()];
-let date = now.getDate();
-let monthDate = document.querySelector("#today-date");
-monthDate.innerHTML = `${day} ${month} ${date}`;
+  let month = months[now.getMonth()];
+  let date = now.getDate();
+  let monthDate = document.querySelector("#today-date");
+  monthDate.innerHTML = `${day} ${month} ${date}`;
+}
 
+updateTime();
 
 //Search engine
 
@@ -54,6 +54,7 @@ function showTemp(response) {
 
 function search(event) {
   event.preventDefault();
+  updateTime();
   let cityInput = document.querySelector("#search-city-input");
   let cityTitle = document.querySelector("#city");
   cityTitle.innerHTML = cityInput.value;
