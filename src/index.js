@@ -1,4 +1,5 @@
 function updateTime() {
+
   let now = new Date();
 
   let days = ["Sunday", 
@@ -39,17 +40,16 @@ updateTime();
 
 function showTemp(response) {
   let todayTemp = document.querySelector("#today-temp");
-  let temp = Math.round(response.data.main.temp);
-  todayTemp.innerHTML = `${temp}º`;
   let feelsLike = document.querySelector("#feels-like");
-  let feels = Math.round(response.data.main.feels_like);
-  feelsLike.innerHTML = `${feels}º`;
   let todayHumidity = document.querySelector("#humidity");
-  let humidity = Math.round(response.data.main.humidity);
-  todayHumidity.innerHTML = `${humidity}%`;
   let windSpeed = document.querySelector("#wind-speed");
-  let wind = Math.round(response.data.wind.speed);
-  windSpeed.innerHTML = `${wind} km/h`;
+  let currentIcon = document.querySelector("#current-icon");
+
+  todayTemp.innerHTML = `${Math.round(response.data.main.temp)}º`;
+  feelsLike.innerHTML = `${Math.round(response.data.main.feels_like)}º`;
+  todayHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
+  windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  currentIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
 
 function search(event) {
