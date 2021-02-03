@@ -49,7 +49,7 @@ function showTemp(response) {
   feelsLike.innerHTML = `${Math.round(response.data.main.feels_like)}º`;
   todayHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
-  currentIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  currentIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search(event) {
@@ -61,7 +61,12 @@ function search(event) {
   let apiKey = "b3a63df8beace64c182e708181f083a8";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
   axios.get(`${apiUrl}q=${cityInput.value}&units=metric&appid=${apiKey}`).then(showTemp);
+  
 }
+
+let apiKey = "b3a63df8beace64c182e708181f083a8";
+let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
+axios.get(`${apiUrl}q=Toronto&units=metric&appid=${apiKey}`).then(showTemp);
 
 let searchCity = document.querySelector("#search-engine");
 searchCity.addEventListener("submit", search);
