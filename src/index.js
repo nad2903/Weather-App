@@ -36,20 +36,20 @@ function updateTime() {
 
 updateTime();
 
-//Search engine
-
 function showTemp(response) {
   let todayTemp = document.querySelector("#today-temp");
   let feelsLike = document.querySelector("#feels-like");
   let todayHumidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind-speed");
   let currentIcon = document.querySelector("#current-icon");
+  let weatherCondition = document.querySelector("#weather-condition");
 
   todayTemp.innerHTML = `${Math.round(response.data.main.temp)}º`;
   feelsLike.innerHTML = `${Math.round(response.data.main.feels_like)}º`;
   todayHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   currentIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  weatherCondition.innerHTML = response.data.weather[0].description;
 }
 
 function search(event) {

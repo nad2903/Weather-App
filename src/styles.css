@@ -6,6 +6,16 @@ a {
   text-decoration: none;
 }
 
+p.today-date-time {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+p:first-letter {
+  text-transform: capitalize;
+}
+
 #current-time {
   margin-top: 0;
   text-align: center;
@@ -15,12 +25,6 @@ a {
   font-size: 40px;
   margin-top: 10px;
   margin-bottom: 0;
-  text-align: center;
-}
-
-p.today-date-time {
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
