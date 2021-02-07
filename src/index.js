@@ -44,10 +44,14 @@ function showTemp(response) {
   let currentIcon = document.querySelector("#current-icon");
   let weatherCondition = document.querySelector("#weather-condition");
 
-  todayTemp.innerHTML = `${Math.round(response.data.main.temp)}º`;
-  feelsLike.innerHTML = `${Math.round(response.data.main.feels_like)}º`;
+  celsiusTemp = response.data.main.temp;
+  celsiusFeels = response.data.main.feels_like;
+  metricSpeed = response.data.wind.speed;
+
+  todayTemp.innerHTML = `${Math.round(celsiusTemp)}º`;
+  feelsLike.innerHTML = `${Math.round(celsiusFeels)}º`;
   todayHumidity.innerHTML = `${Math.round(response.data.main.humidity)}%`;
-  windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  windSpeed.innerHTML = `${Math.round(metricSpeed)} km/h`;
   currentIcon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   weatherCondition.innerHTML = response.data.weather[0].description;
 }
@@ -61,12 +65,55 @@ function search(event) {
   let apiKey = "b3a63df8beace64c182e708181f083a8";
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
   axios.get(`${apiUrl}q=${cityInput.value}&units=metric&appid=${apiKey}`).then(showTemp);
-  
 }
+
+function imperial(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9/5) + 32;
+  let fahrenheitFeels = (celsiusFeels * 9/5) + 32;
+  let imperialSpeed = metricSpeed / 1.609
+  
+  let todayTemp = document.querySelector("#today-temp");
+  let feelsLike = document.querySelector("#feels-like");
+  let windSpeed = document.querySelector("#wind-speed");
+  
+  todayTemp.innerHTML = `${Math.round(fahrenheitTemp)}º`;
+  feelsLike.innerHTML = `${Math.round(fahrenheitFeels)}º`;
+  windSpeed.innerHTML = `${Math.round(imperialSpeed)} mph`;
+
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+}
+
+function metric(event) {
+  event.preventDefault();
+  let todayTemp = document.querySelector("#today-temp");
+  let feelsLike = document.querySelector("#feels-like");
+  let windSpeed = document.querySelector("#wind-speed");
+
+  todayTemp.innerHTML = `${Math.round(celsiusTemp)}º`;
+  feelsLike.innerHTML = `${Math.round(celsiusFeels)}º`;
+  windSpeed.innerHTML = `${Math.round(metricSpeed)} mph`;
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let searchCity = document.querySelector("#search-engine");
+searchCity.addEventListener("submit", search);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", imperial);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", metric);
+
+let celsiusTemp = null;
+let celsiusFeels = null;
+let metricSpeed = null;
 
 let apiKey = "b3a63df8beace64c182e708181f083a8";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
 axios.get(`${apiUrl}q=Toronto&units=metric&appid=${apiKey}`).then(showTemp);
 
-let searchCity = document.querySelector("#search-engine");
-searchCity.addEventListener("submit", search);
+

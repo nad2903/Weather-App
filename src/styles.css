@@ -25,6 +25,18 @@ p:first-letter {
   padding: 5px;
 }
 
+#unit-links {
+  color: #212529;
+  position: relative;
+  top: 27px;
+  left: 25px;
+}
+
+#unit-links .active {
+  color: #212529;
+  cursor: default;
+}
+
 .city {
   font-size: 40px;
   margin-top: 10px;
