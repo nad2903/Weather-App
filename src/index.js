@@ -59,6 +59,8 @@ function showTemp(response) {
 function search(event) {
   event.preventDefault();
   updateTime();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let cityInput = document.querySelector("#search-city-input");
   let cityTitle = document.querySelector("#city");
   cityTitle.innerHTML = cityInput.value;
@@ -93,7 +95,7 @@ function metric(event) {
 
   todayTemp.innerHTML = `${Math.round(celsiusTemp)}º`;
   feelsLike.innerHTML = `${Math.round(celsiusFeels)}º`;
-  windSpeed.innerHTML = `${Math.round(metricSpeed)} mph`;
+  windSpeed.innerHTML = `${Math.round(metricSpeed)} km/h`;
 
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
